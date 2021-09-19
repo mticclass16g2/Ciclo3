@@ -15,11 +15,11 @@
     <v-btn icon>
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
-    <v-btn color="white" text rounded lass="my-2" to="nosotros">Nosotros</v-btn>
-    <v-btn color="white" text rounded lass="my-2" to="noticias">Noticias</v-btn>
-    <v-btn color="white" text rounded lass="my-2" to="suscripciones">Suscríbete</v-btn>
-    <v-btn color="white" text rounded lass="my-2" to="servicios">Servicios</v-btn>
-    <v-btn color="white" text rounded lass="my-2" to="login">Login</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="nosotros">Nosotros</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="noticias">Noticias</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="suscripciones">Suscríbete</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="servicios">Servicios</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="login">Login</v-btn>
   </v-toolbar-items>
   </v-toolbar>
     <v-main>
@@ -47,7 +47,7 @@
           </v-icon>
         </v-btn>      
         <v-btn
-          v-for="( link,key) in links"
+          v-for="(link,key) in links"
           :key="link"
           color="white"
           text
