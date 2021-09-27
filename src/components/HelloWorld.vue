@@ -1,20 +1,96 @@
 <template>
   <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
+	<v-row cols="12" class="my-1">
+      <v-card>
         <v-img
-          :src="require('../assets/reactivate-logo-transp-929x172.png')"
-          class="my-3"
-          contain
-          height="150"
-        />
-      </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Bien venido a nuestra Plataforma
-        </h1>
-
+          :src="require('../assets/reactivate-seccion-01-encabezado-sin-texto.jpg')"
+          class="white--text"
+          rounded-lg 
+          cover
+          pa-1
+        >
+        <v-card-text class="text-h5 font-weight-bold mt-6">
+          <v-row>
+          <v-spacer></v-spacer>
+          <v-btn
+            rounded
+            color="primary"
+            dark
+            class="mb-6"
+          >Inicar Sesión</v-btn>
+          <v-btn
+            rounded
+            color="primary"
+            dark
+            class="mb-6 mx-3"
+          >Unete y crea tu perfil</v-btn>          
+          </v-row>
+          <v-row class="mb-10"></v-row>
+          <v-row align="center" style="widt:100%;">
+            <v-col cols="3"></v-col>
+            <v-col
+                class="text-h3"
+                cols="6"
+              >
+              <p>Reactívate Colombia</p>
+              <p style="font-size:1.25rem;text-align:center;">El directorio de profesionales y empresas para la reactivación ecónomica en Colombia</p>
+            </v-col>
+            <v-col cols="3"></v-col>
+          </v-row>
+        </v-card-text>
+        </v-img>        
+      </v-card>
+    </v-row>    
+    <v-row class="text-center" style="max-width:100%;">
+      <v-row class="mt-6">
+          <v-col
+        class="mb-5"
+        cols="6"
+        >
+        <v-img
+        class="rounded-lg pa-4" 
+        src="https://i.ibb.co/F66X0X4/reactivate-seccion-02.jpg"              
+        >
+        </v-img>        
+          </v-col>
+          <v-col
+            class="mb-5"
+            cols="6"        
+          >
+          <h2 class="font-weight-bold mb-3">
+            !Registrate y ofrece tus servicios como experto profesional hoy mismo!
+          </h2>
+          <v-btn
+            rounded
+            color="primary"
+            dark
+            class="mb-6"
+          >Crear mi perfil profesional</v-btn>
+          <h2 class=" font-weight-bold mb-3">
+            !Encuentra aquí el profesional que estas necesitando!
+          </h2>
+          <v-text-field
+              label="escribe tus busquedas"
+              rounded
+              color="blue lighten-4"
+              class="mx-auto my-0"
+              dense
+              outlined
+          ></v-text-field>
+          <v-btn
+            rounded
+            color="primary"
+            dark
+          >
+          Buscar un profesional experto
+          </v-btn>                 
+          </v-col>
+      </v-row>
+      <v-row>
+        <v-col 
+        class="mb-4"
+        cols="12"
+        >
         <p class="subheading font-weight-regular">
           <br>
           <a
@@ -22,70 +98,16 @@
             target="_blank"
           > Somos el grupo 16 equipo de desarrollo No 2</a>
         </p>
-      </v-col>
-
-      <v-col
+        </v-col>
+        <v-col
         class="mb-5"
         cols="12"
       >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
+        <h2 class="display-2 font-weight-bold mb-3">
+          Categorias de Expertos
         </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
+        </v-col>
+      </v-row>
     </v-row>
   </v-container>
 </template>
@@ -95,56 +117,15 @@
     name: 'HelloWorld',
 
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
-      ],
+
+
     }),
   }
 </script>
+<style scoped>
+.bg {
+  background: url("../assets/reactivate-seccion-01-encabezado-sin-texto.jpg") no-repeat center center;
+  object-fit: cover;
+  width: 100%;
+ }
+</style>

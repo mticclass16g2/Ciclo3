@@ -6,20 +6,14 @@
     max-height="48"
   >
   <v-app-bar-nav-icon to="/"></v-app-bar-nav-icon>
-  <v-toolbar-title>Reactívate</v-toolbar-title>
+  <v-toolbar-title class="white--text">Inicio</v-toolbar-title>
   <v-spacer></v-spacer>
-  <v-text-field
-            label="Buscar Servicios"
-  ></v-text-field>
   <v-toolbar-items>
-    <v-btn icon>
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
     <v-btn color="white" text rounded class="my-auto" to="nosotros">Nosotros</v-btn>
     <v-btn color="white" text rounded class="my-auto" to="noticias">Noticias</v-btn>
-    <v-btn color="white" text rounded class="my-auto" to="suscripciones">Suscríbete</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="suscripciones">Suscripciones</v-btn>
     <v-btn color="white" text rounded class="my-auto" to="servicios">Servicios</v-btn>
-    <v-btn color="white" text rounded class="my-auto" to="login">Login</v-btn>
+    <v-btn color="white" text rounded class="my-auto" to="login">Iniciar Sesión</v-btn>
   </v-toolbar-items>
   </v-toolbar>
     <v-main>
@@ -27,8 +21,9 @@
     </v-main>
     <v-footer
       color="primary lighten-1"
+      class="mt-10"
       padless
-      fixed
+
     >
       <v-row
         justify="center"
