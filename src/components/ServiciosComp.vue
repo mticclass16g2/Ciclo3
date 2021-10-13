@@ -2,7 +2,7 @@
   <v-container>
   <v-row class="text-center">
     <v-col
-    v-for=" item in servicios"
+    v-for=" item in this.$store.getters.getCategoriasServicios()"
     :key="item.nombre"    
     cols="12"
     md="3"
@@ -62,49 +62,13 @@
 export default {
   name: 'ServiciosComp',
   data : () =>({
-    servicios: [
-      {
-        nombre: "Asesores Comerciales",
-        photoUrl:"https://i.ibb.co/8KYGcLG/reactivate-seccion-03-01-asesores-comerciales.png"
-      },
-      {
-        nombre: "Marketing Digital",
-        photoUrl:"https://i.ibb.co/Qbf6pZB/reactivate-seccion-03-02-marketing-digital.png"
-      },
-      {
-        nombre: "Aseoría Juridica",
-        photoUrl:"https://i.ibb.co/qYYvsGQ/reactivate-seccion-03-03-asesoria-juridica.png"
-      },
-      {
-        nombre: "Cuidado de Mascotas",
-        photoUrl:"https://i.ibb.co/9ZqXcg7/reactivate-seccion-03-04-cuidado-de-mascotas.png"
-      },
-      {
-        nombre: "Cuidado de Muebles",
-        photoUrl:"https://i.ibb.co/3vxFQhW/reactivate-seccion-03-05-cuidado-de-muebles.png"
-      },
-      {
-        nombre: "Gimnacios Entrenadores Personales",
-        photoUrl:"https://i.ibb.co/hL7DfLj/reactivate-seccion-03-06-gimnasios-entrenadores-personales.png"
-      },
-      {
-        nombre: "Arquitectura y Construcción",
-        photoUrl:"https://i.ibb.co/19vHdMt/reactivate-seccion-03-07-arquitectura-construccion.png"
-      },
-      {
-        nombre: "Asesoria Contable",
-        photoUrl:"https://i.ibb.co/H7Z7k5k/reactivate-seccion-03-08-asesoria-contable.png"
-      },			  
-      {
-        nombre: "Electricitas",
-        photoUrl:"https://i.ibb.co/CVSfcNk/reactivate-seccion-03-09-electricistas.png"
-      },
-      {
-        nombre: "Meseros Catering y Atención de Eventos",
-        photoUrl:"https://i.ibb.co/PQ64Z3c/reactivate-seccion-03-10-meseros-catering-atencion-de-eventos.png"
-      }			  
-    ]
+
   }),
+
+  mounted: function() {
+
+  },
+
   }
 </script>
 

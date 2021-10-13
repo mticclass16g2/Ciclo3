@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>Esta es la página de suscripiones</h1>
-  </div>
+  <SuscripcionesComp />
 </template>
+
+<script>
+import SuscripcionesComp from '@/components/SuscripcionesComp'
+export default {
+    name: 'Suscripciones',
+
+    components: {
+      SuscripcionesComp
+    },
+  }  
+
+</script>
+
+<style>
+
+</style>

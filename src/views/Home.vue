@@ -1,10 +1,10 @@
 <template>
   <div>
   <hello-world />
-  <servicios-comp />
+  <CategoriasServicioComp />
   <v-container class="blue-grey lighten-3 my-20 rounded">
   <v-row style="text-align:center;">
-    <h1>¿Por qué estar en reactivate?</h1>
+    <h1>¿Por qué estar en Reactivate?</h1>
  </v-row>
   <v-row>
    <v-col
@@ -156,7 +156,7 @@
 
 <script>
   import HelloWorld from '../components/HelloWorld'
-  import ServiciosComp from '../components/ServiciosComp'
+  import CategoriasServicioComp from '../components/CategoriasServicioComp'
 
 
 
@@ -165,7 +165,7 @@
 
     components: {
       HelloWorld,
-      ServiciosComp
+      CategoriasServicioComp
     },
   }
 </script>

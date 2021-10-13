@@ -1,10 +1,13 @@
+import axios from 'axios'
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { Store } from 'vuex'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    categoria:'',
+    idCategoria:'',
     serviciosEnCategoria: [
       {
           id: 1,
@@ -506,20 +509,146 @@ export default new Vuex.Store({
           email: 'xx50@gmail.com',
           idCategoria: 10
       }
-    ]
+    ],
+
+    CategoriasServicios: [
+        {
+          id: 1,
+          nombre: "Asesores Comerciales",
+          photoUrl:"https://i.ibb.co/8KYGcLG/reactivate-seccion-03-01-asesores-comerciales.png"
+        },
+        {
+          id: 2,        
+          nombre: "Marketing Digital",
+          photoUrl:"https://i.ibb.co/Qbf6pZB/reactivate-seccion-03-02-marketing-digital.png"
+        },
+        {
+          id: 3,        
+          nombre: "Aseoría Juridica",
+          photoUrl:"https://i.ibb.co/qYYvsGQ/reactivate-seccion-03-03-asesoria-juridica.png"
+        },
+        {
+          id: 4,        
+          nombre: "Cuidado de Mascotas",
+          photoUrl:"https://i.ibb.co/9ZqXcg7/reactivate-seccion-03-04-cuidado-de-mascotas.png"
+        },
+        {
+          id: 5,        
+          nombre: "Cuidado de Muebles",
+          photoUrl:"https://i.ibb.co/3vxFQhW/reactivate-seccion-03-05-cuidado-de-muebles.png"
+        },
+        {
+          id: 6,        
+          nombre: "Gimnacios Entrenadores Personales",
+          photoUrl:"https://i.ibb.co/hL7DfLj/reactivate-seccion-03-06-gimnasios-entrenadores-personales.png"
+        },
+        {
+          id: 7,        
+          nombre: "Arquitectura y Construcción",
+          photoUrl:"https://i.ibb.co/19vHdMt/reactivate-seccion-03-07-arquitectura-construccion.png"
+        },
+        {
+          id: 8,        
+          nombre: "Asesoria Contable",
+          photoUrl:"https://i.ibb.co/H7Z7k5k/reactivate-seccion-03-08-asesoria-contable.png"
+        },			  
+        {
+          id: 9,        
+          nombre: "Electricitas",
+          photoUrl:"https://i.ibb.co/CVSfcNk/reactivate-seccion-03-09-electricistas.png"
+        },
+        {
+          id: 10,        
+          nombre: "Meseros Catering y Atención de Eventos",
+          photoUrl:"https://i.ibb.co/PQ64Z3c/reactivate-seccion-03-10-meseros-catering-atencion-de-eventos.png"
+        }			  
+      ],
 
   },
+
   getters: {
     getServicios_enCategoria: (state) => (idCategoria) => {
       return state.serviciosEnCategoria.filter(x => x.idCategoria==idCategoria)
     },
+
+    getCategoriasServicios: (state) => (idCategoria=null)=>{
+        
+        let r=[]
+        if (idCategoria==null){
+            r= state.CategoriasServicios
+        } 
+        else {r=state.CategoriasServicios.filter(x => x.id==idCategoria)}
+        console.log('este es r:', r)
+        return r
+    },
+
+     
+
+
   },
 
   mutations: {
+      setCategoria(state, idCategoria){
+          let r=state.CategoriasServicios.filter(x => x.id==idCategoria)
+          console.log('this is r',r)
+          state.categoria=r[0].nombre
+          console.log('this is category',state.categoria)
       
-  },
+         },
+        setIdCategoria(state, idCategoria){
+            
+            state.idCategoria=idCategoria
+        },         
+    },
+
   actions: {
-  },
+
+
+/*      verRegistros ({commit}) {  
+         fetch('https://reactivate-backend.herokuapp.com/registro',{
+
+            method: 'GET', 
+            headers: {
+              'content-type': 'application/json'
+             },
+         })
+        .then(response => {
+         
+          console.log('este es data', response)
+        
+        })
+        .catch(error => {
+          console.log(error)
+
+        })
+      },   */
+
+
+      verRegistros(){
+        axios.get('https://reactivate-backend.herokuapp.com/registro'
+        ).then(response => {
+         
+            console.log('este es data', response)
+          
+          })
+          .catch(error => {
+            console.log(error)
+  
+          })
+        },
+
+        setNombreCategoria({commit},idCategoria){
+            commit('setCategoria', idCategoria);
+        },
+        setIdCategoria({commit},idCategoria){
+            commit('setIdCategoria', idCategoria);
+        }        
+
+    },
+
+   
+
+
   modules: {
   }
 })

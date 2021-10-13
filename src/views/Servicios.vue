@@ -1,5 +1,24 @@
 <template>
-  <div class="about">
-    <h1>Esta es la página de Servicios</h1>
-  </div>
+<v-container>
+
+<CategoriasServicioComp />
+
+</v-container>
+  
 </template>
+
+<script>
+import CategoriasServicioComp from '../components/CategoriasServicioComp.vue'
+
+export default {
+
+    components: {
+      CategoriasServicioComp
+    },  
+
+}
+</script>
+
+<style>
+
+</style>
